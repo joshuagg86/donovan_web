@@ -1,3 +1,11 @@
+// PANTALLA DE CARGA
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 500); // Pequeño delay para mejor transición
+});
+
 // FUNCIONALIDAD DE ANIMACIONES FADE IN
 const fadeInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -8,6 +16,26 @@ const fadeInObserver = new IntersectionObserver((entries) => {
 }, {
     threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
+});
+
+// FUNCIONALIDAD DEL BOTÓN VOLVER ARRIBA
+const backToTopButton = document.getElementById('back-to-top');
+
+// Mostrar/ocultar botón según scroll
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+// Hacer scroll hacia arriba al hacer clic
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // FUNCIONALIDAD DEL HAMBURGER MENU
