@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- PANTALLA DE CARGA -->
     <div id="loading-screen" class="loading-screen">
         <img src="logo.png" alt="Dr. Donovan Logo" class="loading-logo">
     </div>
 
-    <!-- HEADER -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
@@ -27,11 +25,16 @@
                     <li><a href="#proceso" class="nav-link">Primer consulta</a></li>
                     <li><a href="#faq" class="nav-link">Preguntas frecuentes</a></li>
                 </ul>
-                <div class="nav-right">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <button class="hamburger">
+                
+                <div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
+                    <a href="https://www.facebook.com/profile.php?id=61576325464513" target="_blank" aria-label="Facebook" style="color: #006B7D; font-size: 24px; text-decoration: none;">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/dr.donovanplastic/" target="_blank" aria-label="Instagram" style="color: #006B7D; font-size: 24px; text-decoration: none;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <button class="hamburger" style="margin-left: 10px;">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -41,7 +44,6 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero fade-in-section">
         <div class="hero-background">
             <picture>
@@ -63,13 +65,11 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CTA -->
     <div class="hero-cta fade-in-section">
         <p>Trabajo con un enfoque médico y quirúrgico orientado a resultados naturales, seguros<br>y personalizados.</p>
-        <button class="btn btn-primary">Agenda tu consulta de valoración</button>
+        <a href="https://wa.me/525665466945" class="btn btn-primary" target="_blank">Agenda tu consulta de valoración</a>
     </div>
 
-    <!-- SECCIÓN SOBRE MÍ -->
     <section id="sobre-mi" class="about-section fade-in-section">
         <div class="about-container">
             <div class="about-image">
@@ -85,7 +85,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN POR QUÉ ATENDERTE CONMIGO -->
     <section class="why-section fade-in-section">
         <div class="why-container">
             <div class="why-header">
@@ -123,7 +122,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CIRUGÍA ESTÉTICA -->
     <section id="procedimientos" class="procedures-section fade-in-section">
         <div class="procedures-container">
             <div class="procedures-header">
@@ -157,12 +155,11 @@
             </div>
             <div class="procedures-cta">
                 <p class="cta-text">Cada procedimiento se planifica de forma individual,<br>considerando tu anatomía, objetivos y seguridad médica.</p>
-                <button class="btn btn-cta">Solicitar valoración personalizada</button>
+                <a href="https://wa.me/525665466945" class="btn btn-cta" target="_blank">Solicitar valoración personalizada</a>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN RESULTADOS -->
     <section id="resultados" class="results-section fade-in-section">
         <div class="results-container">
             <div class="results-content">
@@ -191,7 +188,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PRIMERA CONSULTA -->
     <section id="proceso" class="consultation-section fade-in-section">
         <div class="consultation-container">
             <div class="consultation-header">
@@ -223,7 +219,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PREGUNTAS FRECUENTES -->
     <section id="faq" class="faq-section fade-in-section">
         <div class="faq-container">
             <div class="faq-header">
@@ -289,25 +284,27 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CTA FINAL -->
     <section class="final-cta-section fade-in-section">
         <div class="final-cta-container">
-            <span class="final-cta-badge">Agenda tu consulta conmigo</span>
+            <a href="https://wa.me/525665466945" class="final-cta-badge" target="_blank" style="text-decoration: none; cursor: pointer;">Agenda tu consulta conmigo</a>
+            
             <p class="final-cta-text">Da el primer paso hacia un cambio seguro, informado y con respaldo médico.</p>
             <p class="final-cta-contact">56 6546 6945 | dr.donovanplastic@gmail.com</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <h3 class="footer-title">AVISO DE RESPONSABILIDAD SANITARIA</h3>
             <p class="footer-text">Responsable Sanitario: Dr. Donovan Reynoso</p>
             <p class="footer-text">Aviso de Publicidad: A.P. 2509012002A00091</p>
+            
+            <p class="footer-text" style="margin-top: 20px; opacity: 0.8; font-size: 0.9em;">
+                Sitio web diseñado por <a href="https://dthinkng.com/" target="_blank" style="color: inherit; text-decoration: underline;">Digital Thinking</a>
+            </p>
         </div>
     </footer>
 
-    <!-- BOTÓN VOLVER ARRIBA -->
     <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
         <i class="fas fa-arrow-up"></i>
     </button>
