@@ -121,3 +121,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// FUNCIONALIDAD DE NAVEGACIÓN ACTIVA (INDICADOR SUBRAYADO)
+const navOptions = {
+    threshold: 0.6 // Se activa cuando el 60% de la sección es visible
+};
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Obtenemos el ID de la sección visible
+            const id = entry.target.getAttribute('id');
+            
+            // Removemos 'active' de todos los links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                // Si el href coincide con el ID, le ponemos la clase active
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, navOptions);
+
+// Aplicar el observador a todas las secciones que tienen un ID y están en el menú
+document.querySelectorAll('section[id]').forEach(section => {
+    navObserver.observe(section);
+});
