@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Donovan Reymundo - Cirugía Plástica</title>
+    <title>Dr. Donovan Reynoso - Cirugía Plástica</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,6 +24,7 @@
                     <li><a href="#resultados" class="nav-link">Resultados</a></li>
                     <li><a href="#proceso" class="nav-link">Primer consulta</a></li>
                     <li><a href="#faq" class="nav-link">Preguntas frecuentes</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li> 
                 </ul>
                 
                 <div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
@@ -81,6 +82,15 @@
                 <h2 class="about-title">Cirugía plástica con formación profesional y enfoque ético</h2>
                 <p class="about-intro">Soy el Dr. Donovan Reynoso, médico cirujano egresado de la UNAM, con especialización en Cirugía General y Cirugía Plástica, Estética y Reconstructiva con Certificación del Consejo y Diplomado en Microcirugía en el Hospital ABC, además de actualización médica continua.</p>
                 <p class="about-description">Mi práctica se basa en el rigor científico, la comunicación abierta y un trato humano personalizado, orientado a lograr resultados naturales, armónicos y seguros.</p>
+                <div class="about-cta">
+                    <a href="https://directorio.cmcper.mx/certificado/2665/" target="_blank" class="btn btn-outline">
+                        <img src="logo_cmcper.png" alt="Logo CMCPER" class="btn-icon-img logo-normal">
+                        
+                        <img src="logo_cmcper_white.png" alt="Logo CMCPER Blanco" class="btn-icon-img logo-hover">
+                        
+                        Ver certificación oficial
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -130,27 +140,17 @@
             </div>
             <div class="procedures-cards">
                 <div class="procedure-card">
-                    <div class="procedure-icon">
-                        <img src="nariz 1.png" alt="Cirugía facial">
-                    </div>
                     <h3 class="procedure-title">Cirugía facial</h3>
-                    <ul class="procedure-list">
-                        <li>Rinoplastia</li>
-                        <li>Lifting facial</li>
-                        <li>Blefaroplastia</li>
-                        <li>Cervicoplastia</li>
-                    </ul>
-                </div>
-                <div class="procedure-card">
-                    <div class="procedure-icon">
-                        <img src="vientre 1.png" alt="Cirugía corporal">
+                    <div class="procedure-image-container">
+                        <img src="facial_donovan.png" alt="Cirugía facial Dr. Donovan" class="procedure-main-img">
                     </div>
+                </div>
+
+                <div class="procedure-card">
                     <h3 class="procedure-title">Cirugía corporal</h3>
-                    <ul class="procedure-list">
-                        <li>Contorno corporal</li>
-                        <li>Aumento mamario</li>
-                        <li>Mastopexia en sus diferentes técnicas</li>
-                    </ul>
+                    <div class="procedure-image-container">
+                        <img src="corporal_donovan.png" alt="Cirugía corporal Dr. Donovan" class="procedure-main-img">
+                    </div>
                 </div>
             </div>
             <div class="procedures-cta">
@@ -170,11 +170,12 @@
                 </div>
                 <div class="results-carousel">
                     <div class="carousel-container">
-                        <div class="carousel-slide active" style="background-color: #4CAF50;"></div>
-                        <div class="carousel-slide" style="background-color: #2196F3;"></div>
-                        <div class="carousel-slide" style="background-color: #000000;"></div>
-                        <div class="carousel-slide" style="background-color: #9C27B0;"></div>
-                        <div class="carousel-slide" style="background-color: #FFEB3B;"></div>
+                        <div class="carousel-slide active">
+                            <img src="g_1.png" alt="Rinoplastia Antes y Después" class="slide-img">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="g_2.png" alt="Lifting Facial Resultado" class="slide-img">
+                        </div>
                     </div>
                     <div class="carousel-dots">
                         <span class="dot active" data-slide="0"></span>
@@ -283,6 +284,39 @@
             </div>
         </div>
     </section>
+
+    <section id="contacto" class="contact-section fade-in-section">
+    <div class="contact-container">
+        <div class="contact-box">
+            <h2 class="contact-title">¿Tienes alguna duda adicional?</h2>
+            <p class="contact-subtitle">Déjanos tus datos y nos pondremos en contacto contigo a la brevedad.</p>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+                </div>
+                <div class="form-group">
+                    <select name="procedimiento" required>
+                        <option value="" disabled selected>Procedimiento de interés</option>
+                        <option value="facial">Cirugía Facial</option>
+                        <option value="corporal">Cirugía Corporal</option>
+                        <option value="otro">Otro / Consulta general</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Enviar mensaje</button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <section class="final-cta-section fade-in-section">
         <div class="final-cta-container">
