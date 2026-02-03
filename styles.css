@@ -285,10 +285,10 @@ body {
     text-decoration: none;
     font-weight: 300;
     font-size: 0.95rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.2rem; /* Ajustado ligeramente para dar espacio al nuevo botón de contacto */
     display: block;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 3px solid transparent; /* Mantiene el espacio reservado para que el menú no "salte" */
     position: relative;
 }
 
@@ -298,7 +298,8 @@ body {
 
 .nav-link.active {
     color: var(--primary-teal);
-    border-bottom-color: var(--primary-teal);
+    border-bottom: 3px solid var(--primary-teal); /* El subrayado que viste en tu captura */
+    font-weight: 500; /* Opcional: le da un poco más de peso visual a la sección activa */
 }
 
 .nav-right {
@@ -387,7 +388,7 @@ body {
     }
 
     .nav-link {
-        padding: 0.5rem 1.25rem;
+        padding: 0.5rem 1rem; /* Reducido de 1.25rem a 1rem para dar aire al nuevo botón */
     }
 
     .search-btn {
@@ -872,49 +873,53 @@ body {
 }
 
 .procedure-card {
-    border: 1px solid #00AEC1;
+    border: none; /* Esto elimina el contorno azul */
     border-radius: 35px;
-    padding: 4rem 2rem 2rem 2rem;
-    background-color: var(--white);
+    padding: 0; 
+    background-color: transparent; /* Permite que la imagen sea la protagonista */
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    margin-top: 180px;
+    position: relative; 
+    margin-top: 50px; 
+    overflow: visible; 
 }
-
-.procedure-icon {
-    width: 160px;
-    height: 160px;
+/* Contenedor de la nueva imagen */
+.procedure-image-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: -180px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--white);
-    border-radius: 50%;
-    padding: 20px;
 }
-
-.procedure-icon img {
+.procedure-main-img {
     width: 100%;
     height: auto;
+    border-radius: 35px; 
+    display: block;
+    object-fit: cover;
 }
+
+.procedure-icon {
+    display: none;
+}
+
+
 
 .procedure-title {
     background-color: #00AEC1;
     color: var(--white);
-    padding: 0.5rem 2rem;
+    padding: 0.6rem 2.5rem;
     border-radius: 35px;
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 0 0 1.5rem 0;
-    position: absolute;
-    top: -15px;
+    margin: 0;
+    position: absolute; /* Lo hacemos flotar */
+    top: -20px; /* Lo posicionamos a la mitad del borde superior */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Lo centramos perfectamente */
+    z-index: 10;
+    white-space: nowrap;
 }
 
 .procedure-list {
@@ -943,60 +948,54 @@ body {
 }
 
 @media (max-width: 767px) {
+    /* 1. Reducimos el espacio excesivo entre secciones */
     .procedures-section {
-        padding: 2rem 1.5rem;
-        text-align: center;
+        padding: 2rem 1rem; /* Menos espacio general */
     }
 
     .procedures-header {
-        padding: 2rem 1.5rem;
-        text-align: center;
+        margin-bottom: 1rem; /* Menos espacio entre el texto superior y las fotos */
     }
 
-    .procedures-badge {
-        font-size: 1.2rem;
-        padding: 0.6rem 1.5rem;
-    }
-
-    .procedures-header h2 {
-        font-size: 1.4rem;
-    }
-
-    .procedures-header p {
-        text-align: center;
-    }
-
-    .procedures-cards {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
+    /* 2. Ajustamos la tarjeta para que la imagen sea más grande y el título flote */
     .procedure-card {
-        padding: 4rem 2rem 1.5rem 2rem;
-        margin-top: 140px;
-        text-align: center;
-        min-width: 280px;
-        max-width: 100%;
+        margin-top: 30px !important; /* Espacio justo para que quepa el título flotante */
+        padding: 0 !important;
+        width: 100%;
+        max-width: 450px; /* Hacemos la imagen más grande en móviles */
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    /* 3. Aseguramos que el título flote sobre la imagen en móvil */
     .procedure-title {
-        font-size: 1.3rem;
+        position: absolute !important;
+        top: -15px !important; /* Lo posicionamos sobre el borde superior */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 1rem !important;
+        padding: 0.5rem 1.5rem !important;
         white-space: nowrap;
+        z-index: 10;
     }
 
+    /* 4. Quitamos espacios innecesarios del icono viejo que ya no existe */
     .procedure-icon {
-        width: 120px;
-        height: 120px;
-        top: -140px;
+        display: none !important;
     }
 
-    .procedure-icon img {
-        width: 80px;
-        height: 80px;
+    /* 5. Espaciado entre la primera y segunda imagen */
+    .procedures-cards {
+        gap: 4rem; /* Controla la separación vertical entre las dos tarjetas */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .procedures-cta {
-        text-align: center;
+    .procedure-main-img {
+        width: 100%;
+        height: auto;
+        border-radius: 25px; /* Bordes redondeados consistentes */
     }
 }
 
@@ -1626,5 +1625,234 @@ body {
 
     .footer-text {
         font-size: 0.75rem;
+    }
+}
+/* SECCIÓN DE CONTACTO */
+.contact-section {
+    padding: 2rem 9rem; /* Mismo padding lateral que el resto de las secciones */
+    background-color: var(--white);
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    /* Copiamos los valores exactos de .faq-box para que midan lo mismo */
+    max-width: 1000px; 
+    margin: 0 auto; 
+    background-color: var(--light-teal);
+    padding: 3rem;
+    border-radius: 35px;
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no ensanche la caja */
+}
+
+.contact-title {
+    color: var(--primary-teal);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.contact-subtitle {
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 850px; /* Un poco más estrecho por dentro para mejor lectura */
+    margin: 0 auto;
+}
+
+.form-group {
+    width: 100%;
+}
+
+/* Campos que ocupan todo el ancho (Mensaje y Botón) */
+.contact-form .form-group:nth-child(5),
+.contact-form .btn-submit {
+    grid-column: span 2;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    font-family: 'Axiforma', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-teal);
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+/* RESPONSIVE CONTACTO */
+@media (max-width: 767px) {
+    .contact-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .contact-box {
+        padding: 2rem 1.5rem;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form .form-group:nth-child(5),
+    .contact-form .btn-submit {
+        grid-column: span 1;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+}
+/* Contenedor del botón en Sobre Mí */
+.about-cta {
+    margin-top: 2rem;
+}
+
+/* Estilo para botón secundario / de certificación */
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-teal);
+    border: 2px solid var(--primary-teal);
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline i {
+    font-size: 1.2rem;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-teal);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+    .about-cta {
+        text-align: center; /* Centrado en móviles para mejor estética */
+    }
+}
+/* Estilo para la imagen dentro del botón */
+.btn-icon-img {
+    height: 24px; /* Tamaño discreto pero visible */
+    width: auto;
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+    vertical-align: middle;
+}
+
+/* Ajuste al botón para alinear todo verticalmente */
+.btn-outline {
+    display: inline-flex; /* Esto alinea logo y texto perfectamente al centro */
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 767px) {
+    /* ... tus otros estilos móviles ... */
+
+    /* AJUSTE PARA EL TEXTO DEL RECUADRO AZUL */
+    .procedures-badge {
+        font-size: 1.3rem; /* Un poco más grande para leerse bien */
+        padding: 0.8rem 1rem; /* Reducimos el padding lateral para dar más espacio al texto */
+        width: 90%; /* Ocupará casi todo el ancho disponible */
+        max-width: 350px; /* Evita que se estire demasiado en pantallas medianas */
+        display: inline-block;
+        line-height: 1.3; /* Mejor espaciado entre líneas */
+        white-space: normal; /* Permite que el texto fluya naturalmente */
+    }
+    
+    /* IMPORTANTE: Esto elimina el salto de línea forzado que tenías antes */
+    .mobile-br {
+        display: none !important;
+    }
+}
+/* Estilos generales para el icono */
+.btn-icon-img {
+    height: 24px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    transition: all 0.2s ease; /* Transición suave */
+}
+
+/* 1. Estado Inicial: Ocultamos el logo blanco */
+.logo-hover {
+    display: none;
+}
+
+/* 2. Estado Hover: Intercambio de logotipos */
+
+/* Al pasar el mouse sobre el botón, ocultamos el normal (azul) */
+.btn-outline:hover .logo-normal {
+    display: none;
+}
+
+/* Y mostramos el blanco */
+.btn-outline:hover .logo-hover {
+    display: inline-block;
+}
+
+/* Asegura que la imagen llene el slide correctamente */
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto corta los bordes sobrantes para llenar el espacio sin deformar la foto */
+    object-position: center; /* Centra la imagen */
+    display: block;
+    border-radius: 20px; /* Mantiene los bordes redondeados del contenedor */
+}
+
+@media (max-width: 767px) {
+    /* ... tus otros códigos ... */
+
+    .carousel-container {
+        width: 100%;
+        /* Quitamos la altura fija en pixeles */
+        height: auto !important; 
+        /* Esto crea un rectángulo perfecto (4 de ancho por 3 de alto) */
+        aspect-ratio: 4 / 3; 
+        min-height: 250px; /* Seguridad para pantallas muy pequeñas */
+    }
+
+    /* Aseguramos que la imagen se adapte a este nuevo rectángulo */
+    .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Cubre el área sin deformar */
+        object-position: center top; /* Alinea la imagen un poco más arriba para no cortar frentes */
+        border-radius: 20px;
     }
 }
